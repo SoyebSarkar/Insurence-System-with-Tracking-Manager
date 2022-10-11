@@ -40,6 +40,42 @@ body {
   order: 0;
   flex-grow: 0;
 }
+.sign-up-h2{
+  position: absolute;
+width: 178px;
+height: 17px;
+left: 538px;
+top: 53px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 14px;
+/* or 104% */
+
+
+color: #000000;
+
+}
+.sign-up-btn{
+  position: absolute;
+width: 58px;
+height: 17px;
+left: 709px;
+top: 53px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 14px;
+/* or 104% */
+
+
+color: #20DC49;
+text-decoration: none;
+}
 /* --------------------Form div------- */
 .form-div {
   position: absolute;
@@ -132,6 +168,13 @@ body {
   height: 55px;
   left: 15px;
   top: 487px;
+  
+}
+.login-btn:hover{
+
+background-color:#20DC49;
+opacity: 0.8;
+
 }
 /* ----------rounded remember me btn----------------- */
 .switch {
@@ -231,5 +274,32 @@ line-height: 14px;
 
 
 color: #D93F21;
+
+  }
+
+  .div-right-bg{
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 619px;
+    height: 900px;
+    left: 821px;
+    top: 0px;
+    
+    /* Accent/90
+    
+    295D65
+    */
+    background: #295D65;
+    border: 1px solid #000000
+
+  }
+  .div-right-top{
+    position: absolute;
+width: 637px;
+height: 353px;
+left: 751px;
+top: 522px;
 
   }

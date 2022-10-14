@@ -3,7 +3,7 @@ Insurence System with Tracking Manager
 # Designed in
  Figma, Canva
 # Technologies used
-Till now - HTML, CSS
+Till now - HTML, CSS, JAVASCRIPT
 # Future Plan
 We Have to Make a Fullstack website for Insurence System With Tracking Manager
 # Progress so far

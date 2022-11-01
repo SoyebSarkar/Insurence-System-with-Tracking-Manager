@@ -1,0 +1,734 @@
+body {
+  position: relative;
+  width: 1440px;
+  height: 2910px;
+  margin: 0;
+  background: #ffffff;
+}
+.intro {
+  position: absolute;
+  width: 1447px;
+  height: 585px;
+  left: -7px;
+  top: -1px;
+
+  background: url(../images/bg.png);
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+
+  position: absolute;
+  width: 1175px;
+  height: 50px;
+  left: 135px;
+  top: 35px;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 18px;
+
+  width: 281px;
+  height: 50px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.title-txt {
+  width: 193px;
+  height: 50px;
+
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 125%;
+  /* identical to box height, or 50px */
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.logo-img {
+  width: 70px;
+  height: 48.31px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.navigation-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 30px;
+
+  width: 390px;
+  height: 25px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.nav-button {
+  /* Typography/Sub-Heading/Regular */
+
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 125%;
+  /* identical to box height, or 25px */
+
+  /* text-align: right; */
+
+  /* Color/White/100 */
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  flex-grow: 0;
+}
+a {
+  text-decoration: none;
+}
+.home-nav {
+  /* Home */
+  width: 58px;
+  height: 25px;
+  order: 0;
+}
+.about-nav {
+  width: 89px;
+  height: 25px;
+  font-size: 19px;
+  order: 1;
+}
+.contact-nav {
+  width: 78px;
+  height: 25px;
+  order: 2;
+}
+.sign-nav {
+  width: 75px;
+  height: 25px;
+  order: 3;
+}
+.welcome-div {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  padding: 0px;
+  gap: 30px;
+
+  position: absolute;
+  width: 416px;
+  height: 249px;
+  left: 130px;
+  top: 125px;
+}
+.text-div {
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  width: 416px;
+  height: 176px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.text-div .txt-1 {
+  width: 113px;
+  height: 20px;
+
+  /* Typography / Label / Bold */
+
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  /* margin: 0; */
+  /* identical to box height, or 20px */
+
+  letter-spacing: 5px;
+  text-transform: uppercase;
+
+  /* Text_White */
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.text-div .txt-2 {
+  width: 416px;
+  height: 50px;
+
+  /* Typography/Heading/Bold 1 */
+
+  font-family: "Crimson Text";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 125%;
+  /* identical to box height, or 50px */
+
+  /* Text_White */
+  margin: 0;
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.text-div .txt-3 {
+  width: 416px;
+  height: 76px;
+
+  /* Typography/Body/Regular */
+
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 125%;
+  /* or 19px */
+
+  /* Color/White/75 */
+
+  color: rgba(255, 255, 255, 0.75);
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.welcome-btn {
+  width: 170px;
+  height: 48px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  cursor: pointer;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+/* -------------Start 2nd part-------------------- */
+.policy-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+
+  position: absolute;
+  width: 411px;
+  height: 162px;
+  left: 514px;
+  top: 651px;
+}
+.policy-div .txt-1 {
+  width: 133px;
+  height: 20px;
+
+  /* Typography / Label / Bold */
+
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  /* identical to box height, or 20px */
+  margin: 0;
+  text-align: center;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+
+  /* Color / Green / 100 */
+
+  color: #74c69d;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.policy-div .txt-2 {
+  width: 300px;
+  height: 50px;
+  margin: 0;
+  /* Typography/Heading/Bold 1 */
+
+  font-family: "Crimson Text";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 125%;
+  /* identical to box height, or 50px */
+
+  text-align: center;
+
+  /* Text_Black */
+
+  color: #000000;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.policy-div .txt-3 {
+  width: 411px;
+  height: 60px;
+  margin: 0;
+  /* Typography/Sub-Heading/Regular */
+
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 125%;
+  /* or 25px */
+
+  text-align: center;
+
+  /* Text_Black */
+
+  color: #000000;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+/* -----------Insurence Logo we offer--------------- */
+.btn-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+
+  position: absolute;
+
+  left: 700px;
+  top: 1050px;
+}
+.ins-logo {
+  /* position: absolute; */
+  width: 789px;
+  height: 209px;
+  left: 322px;
+  top: 828px;
+}
+.ins-logo .logo-1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 322px;
+  top: 837px;
+  background: url(../images/Health\ 1.png);
+}
+.ins-logo .logo-2 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 511px;
+  top: 828px;
+  background: url(../images/Health\ 2.png);
+}
+.ins-logo .logo-3 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 711px;
+  top: 828px;
+  background: url(../images/Health\ 3.png);
+}
+.ins-logo .logo-4 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  left: 911px;
+  top: 828px;
+  background: url(../images/Health\ 4.png);
+}
+.btn-div .logo-btn {
+  position: absolute;
+  width: 170px;
+  height: 48px;
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  cursor: pointer;
+
+  /* color / dark */
+
+  background: #212529;
+  border-radius: 5px;
+
+  color: #ffffff;
+  border-radius: 5px;
+}
+/* ----------------page part 3------------ */
+.part-3 {
+  position: absolute;
+  width: 1440px;
+  height: 670px;
+  left: 0px;
+  top: 1181px;
+
+  background: url(../images/page-3-bg.png);
+}
+.content-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px;
+  /* gap: 141px; */
+
+  position: absolute;
+  width: 1180px;
+  height: 265px;
+  left: 170px;
+  top: 215px;
+}
+
+.content-3 .txt-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+
+  width: 470px;
+  height: 265px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.content-3 .txt-div .txt-1 {
+  width: 470px;
+  height: 110px;
+
+  /* Typography/Heading/Bold 1 */
+
+  font-family: "Crimson Text";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 125%;
+  margin: 0;
+  /* or 50px */
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.content-3 .txt-div .txt-2 {
+  width: 470px;
+  height: 75px;
+
+  /* Typography/Body/Regular */
+
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 125%;
+  margin: 0;
+  /* or 19px */
+
+  color: rgba(253, 254, 255, 0.5);
+
+  mix-blend-mode: normal;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.content-3 .txt-div .btn-1 {
+  width: 170px;
+  height: 48px;
+  cursor: pointer;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+/* ---------------page 4th part--------------- */
+.part-4 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 45px;
+
+  position: absolute;
+  width: 1176px;
+  height: 830px;
+  left: 133px;
+  top: 1936px;
+}
+.review-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+
+  width: 404px;
+  height: 162px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.review-title .txt-1 {
+  width: 89px;
+  height: 20px;
+
+  /* Typography / Label / Bold */
+
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 125%;
+  /* identical to box height, or 20px */
+
+  text-align: center;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+
+  /* Color / Green / 100 */
+  margin: 0;
+  color: #74c69d;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.review-title .txt-2 {
+  width: 200px;
+  height: 50px;
+
+  /* Typography/Heading/Bold 1 */
+
+  font-family: "Crimson Text";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 125%;
+  /* identical to box height, or 50px */
+
+  text-align: center;
+
+  /* Color / Dark / 100 */
+
+  margin: 0;
+  color: #212529;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+.review-title .txt-3 {
+  width: 404px;
+  height: 60px;
+
+  /* Typography/Sub-Heading/Regular */
+
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 125%;
+  /* or 25px */
+
+  text-align: center;
+
+  /* Text_Black */
+  margin: 0;
+  color: #000000;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+.card-div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 47px;
+
+  width: 1176px;
+  height: 381px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.part-4 .more-btn {
+  width: 210px;
+  height: 65px;
+
+  /* Inside auto layout */
+  position: absolute;
+
+  top: 736px;
+  left: 483px;
+  cursor: pointer;
+  /* color / dark */
+
+  background: #212529;
+  color: #ffffff;
+  border-radius: 5px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+footer {
+  position: absolute;
+  width: 1440px;
+  height: 125px;
+  left: 1px;
+  top: 2785px;
+
+  background: #74c69d;
+  mix-blend-mode: normal;
+}
+
+footer .div{
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding: 0px;
+gap: 689px;
+
+position: absolute;
+width: 1178px;
+height: 25px;
+left: 132px;
+top: 50%;
+
+}
+.logo-footer{
+  display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 20px;
+
+width: 207.12px;
+height: 18px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.copright-txt{
+  width: 326px;
+  height: 25px;
+  
+  /* Typography/Sub-Heading/Regular */
+  
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 125%;
+  /* identical to box height, or 25px */
+  
+  text-align: right;
+  
+  /* Color / White / 100 */
+  
+  color: #FFFFFF;
+  
+  mix-blend-mode: normal;
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}

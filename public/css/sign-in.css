@@ -1,0 +1,305 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+body {
+  position: relative;
+  width: 1440px;
+  height: 900px;
+
+  background: #f0f2f5;
+}
+.title-div {
+  position: absolute;
+  left: 2.78%;
+  right: 77.71%;
+  top: 4%;
+  bottom: 90.44%;
+}
+.title-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 18px;
+
+  position: absolute;
+  width: 281px;
+  height: 50px;
+  left: 24px;
+  top: 35px;
+}
+.title-logo {
+  width: 70px;
+  height: 48.31px;
+
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.sign-up-h2{
+  position: absolute;
+width: 178px;
+height: 17px;
+left: 538px;
+top: 53px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 14px;
+/* or 104% */
+
+
+color: #000000;
+
+}
+.sign-up-btn{
+  position: absolute;
+width: 58px;
+height: 17px;
+left: 709px;
+top: 53px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 14px;
+/* or 104% */
+
+
+color: #20DC49;
+text-decoration: none;
+}
+/* --------------------Form div------- */
+.form-div {
+  position: absolute;
+  width: 400px;
+  height: 557px;
+  left: 168px;
+  top: 176px;
+}
+.form-div .txt-1 {
+  position: absolute;
+  width: 273px;
+  height: 44px;
+  left: 63px;
+  top: 0px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+
+  color: #000000;
+}
+.form-div .txt-2 {
+  position: absolute;
+  width: 211px;
+  height: 30px;
+  left: 94px;
+  top: 54px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+
+  color: #000000;
+}
+.google-btn {
+  position: absolute;
+  width: 126px;
+  height: 44px;
+  left: 73px;
+  top: 117px;
+  border: none;
+}
+.facebook-btn {
+  position: absolute;
+  width: 126px;
+  height: 44px;
+  left: 213px;
+  top: 117px;
+  border: none;
+}
+.continue-with-social {
+  position: absolute;
+  width: 395px;
+  height: 15px;
+  left: 15px;
+  top: 198px;
+}
+.input-form {
+  position: absolute;
+  width: 400px;
+  height: 70px;
+  background: #ffffff;
+  margin: 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding-left: 24px;
+}
+
+.cutomer-id {
+  position: absolute;
+  width: 400px;
+  height: 70px;
+  left: 15px;
+  top: 233px;
+}
+.password {
+  position: absolute;
+  width: 400px;
+  height: 70px;
+  left: 15px;
+  top: 341px;
+}
+.login-btn {
+  position: absolute;
+  width: 400px;
+  height: 55px;
+  left: 15px;
+  top: 487px;
+  
+}
+.login-btn:hover{
+
+background-color:#20DC49;
+opacity: 0.8;
+
+}
+/* ----------rounded remember me btn----------------- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    left: 15px;
+    top: 432px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #20DC49;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #20DC49;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .slider-txt{
+    position: absolute;
+width: 96px;
+height: 20px;
+left: 70px;
+top: 6px;
+
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 20px;
+
+letter-spacing: 0.3px;
+
+color: #1A1A1A;
+
+  }
+  .forgot-btn{
+    position: absolute;
+width: 127px;
+height: 15px;
+left: 279px;
+top: 8px;
+
+text-decoration: none;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 14px;
+
+
+color: #D93F21;
+
+  }
+
+  .div-right-bg{
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 619px;
+    height: 900px;
+    left: 821px;
+    top: 0px;
+    
+    /* Accent/90
+    
+    295D65
+    */
+    background: #295D65;
+    border: 1px solid #000000
+
+  }
+  .div-right-top{
+    position: absolute;
+width: 637px;
+height: 353px;
+left: 751px;
+top: 522px;
+
+  }

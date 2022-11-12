@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Policy = require('./model/policy');
 const Customer = require('./model/customer');
 const methodOverride = require('method-override');
+const alert = require('alert'); 
 const app = express();
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.urlencoded({extended:false}))
@@ -34,43 +35,48 @@ app.get('/sign-up',(req,res)=>{
 app.get('/sign-in',(req,res)=>{
     res.render('sign-in');
 })
-app.get('/customer', async(req,res)=>{
-    const customer = await Customer.findById("6361716bfd2cf24599e872fb");
+app.get('/customer/:id', async(req,res)=>{
+    const {id} = req.params;
+    const customer = await Customer.findById(id);
+    const policies = await Policy.find();
+    console.log(customer.policy.some(pol=>(pol.name===policies[0].name)));
+    // console.log(policies[0]);
+    res.render('customer-dashboard',{customer, policies});
+})
 
-    res.render('customer-dashboard',{customer});
+app.get('/admin/:id', async(req,res)=>{
+    const {id} = req.params;
+    const customer = await Customer.find();
+    const policies = await Policy.find();
+    res.render('admin-dashboard',{customer, policies});
 })
 
 
 
 app.post('/customer', async (req,res)=>{
     const {id, password} = req.body;
-    // console.log(id);
-    // console.log(password);
+
     try{
         const customer = await Customer.findById(id);
         const policies = await Policy.find();
         console.log(policies);
         
      
-        if(customer.password=== password){
-            
-            // for(let cus of customer){
-            //     console.log()
-            // }
+        if(customer.password === password){
+
              let premDue = customer.policy.filter(p => p.due==true) 
              console.log(premDue);
-            res.render("customer-dashboard", {customer, policies});
-            res.status(200).end();
+             res.redirect(`/customer/${id}`);
         }
         else{
-            res.send("Wrong Password")
+            alert("Wrong Password")
+            res.redirect("/sign-in")
         }
     }
     catch{
         res.send("Wrong ID")
     }
-   
-    
+      
 })
 
 app.post('/apply/:cusId/:polId', async(req,res)=>{
@@ -80,7 +86,8 @@ app.post('/apply/:cusId/:polId', async(req,res)=>{
     customer.policy.push(policy);
     await customer.save();
     console.log(customer);
-    res.send("applied"); 
+    const policies = await Policy.find();
+    res.redirect(`/customer/${cusId}`);
 })
 
 app.post('/create-question',async (req,res)=>{
@@ -93,7 +100,7 @@ app.post('/create-question',async (req,res)=>{
     const customer = await Customer.findById(id);
     customer.question.push(question);
     await customer.save()
-    res.render('customer-dashboard',{customer});
+    res.redirect(`/customer/${id}`);
     
 })
 
@@ -101,13 +108,10 @@ app.post('/create-question',async (req,res)=>{
 app.patch('/customer/policy',async (req,res)=>{
     const {id} = req.body;
     let customer = await Customer.findOneAndUpdate({id, "policy.due": true}, {$set: { "policy.$.due" : false }});
-    // let customer = await Customer.findOne({id, "policy.due": true});
-    // customer.policy[0].due = false;
-    // customer.markModified('due');
 
-    console.log(customer)
+    customer = await Customer.findById(id);
     await customer.save()
-    res.redirect('/customer');
+    res.redirect(`/customer/${id}`);
 })
 
 

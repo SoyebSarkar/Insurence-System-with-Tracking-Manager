@@ -18,6 +18,9 @@ const customerSchema = new mongoose.Schema({
     },
     policy:{
         type:[Object]
+    },
+    approved:{
+        type:Boolean
     }
 })
 

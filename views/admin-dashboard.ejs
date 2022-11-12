@@ -32,23 +32,23 @@
             src="https://img.icons8.com/external-smashingstocks-mixed-smashing-stocks/24/000000/external-Policy-human-resources-smashingstocks-mixed-smashing-stocks.png"
           />
 
-          Policies
+          Customers
         </button>
         <button class="apply-policies-btn btn-font">
           <img src="https://img.icons8.com/ios/24/000000/set-as-resume.png" />
-          Apply Policies
+          Approve Profile
         </button>
         <button class="history-btn btn-font">
           <img src="https://img.icons8.com/windows/24/000000/story-time.png" />
 
-          History
+          Pending Policies
         </button>
         <button class="ask-qs-btn btn-font">
           <img
             src="https://img.icons8.com/material-rounded/24/000000/ask-question.png"
           />
 
-          Ask a Question
+          Solve Queary
         </button>
         <button class="log-out-btn btn-font">
           <img
@@ -68,54 +68,35 @@
       <img src="https://img.icons8.com/doodle/48/000000/user-male-circle.png" />
     </button>
     <!-- ------------------DASHBOARD WINDOW-------------------------------------- -->
-    <% let premDue = customer.policy.filter(p => p.due==true) %>
-    <% if(premDue.length===0) {%>
-      <div class="right-dashboard dashbord-div">
-        <h2 class="due-txt">Premium Due</h2>
-        <div class="prem-due-div">
-          <div class="txt-div">
-            <h2 class="txt-font">All Paid</h2>
-            <h2 class="txt-font">Premium Due: 0 </h2>
-            <h2 class="txt-font">Thank You For Regular payment</h2>
-          </div>
-        </div>
-          <button class="pay-now-btn txt-font">Pay Now</button>
-        
-      </div>
-      <% }else{ %>
+    
     <div class="right-dashboard dashbord-div">
-      <h2 class="due-txt">Premium Due</h2>
+      <h2 class="due-txt">Admin Dashboard</h2>
       <div class="prem-due-div">
         <div class="txt-div">
-          <h2 class="txt-font"><%= premDue[0].name %> </h2>
-          <h2 class="txt-font">Premium Due: <%= premDue[0].premium %> </h2>
-          <h2 class="txt-font">Due Date on: 25 OCT, 2022</h2>
+          <h2 class="txt-font">Total Active User: 1</h2>
+          <h2 class="txt-font">Pending Application:3%> </h2>
+          <h2 class="txt-font">Pending Policies:2</h2>
         </div>
       </div>
-      <form method="post" action="/customer/policy?_method=PATCH ">
-        <input type="text" name="id" value="<%= customer._id  %>" style="display: none;">
-        <button  class="pay-now-btn txt-font">Pay Now</button>
-      </form>
       
     </div>
-    <% } %> 
 
     <!-- --------------------------DashBoard End--------------------------------- -->
 
-    <!-- ------------------Policy Start------------------ -->
+    <!-- ------------------Customers------------------ -->
     <div class="right-dashboard dash your-policy hide">
-      <h2 class="due-txt">Policies You Have</h2>
+      <h2 class="due-txt">Customers You Have</h2>
       <div class="policy-div">
         <div class="element">
-          <h2 class="policy-name txt-font">Policy Name</h2>
-          <h2 class="premium txt-font">Premium</h2>
-          <h2 class="premium txt-font">Details</h2>
+          <h2 class="policy-name txt-font">Customer Name</h2>
+          <h2 class="premium txt-font">Policy Hold</h2>
+          <h2 class="premium txt-font">Query</h2>
         </div>
-        <% for(let plc of customer.policy) {%> 
+        <% for(let cus of customer) {%> 
           <div class="element">
-            <h2 class="policy-name txt-font"><%= plc.name %> </h2>
-            <h2 class="premium txt-font"><%= plc.premium %> </h2>
-            <button class="apply-btn txt-font">Details</button>
+            <h2 class="policy-name txt-font"><%= cus.name %> </h2>
+            <h2 class="premium txt-font"><%= cus.policy.length %> </h2>
+            <h2 class="premium txt-font"><%=cus.question.length%></h2>
           </div>
           <%}  %> 
 
@@ -124,31 +105,20 @@
     </div>
 
     <!-- --------------------Policy End------------------------------- -->
-    <!-- -----------------------------APPLY POLICY START-------------------------------------- -->
+    <!-- -----------------------------Approve Profile-------------------------------------- -->
     <div class="right-dashboard show-policy hide">
-      <h2 class="due-txt txt-font">Policy Available</h2>
+      <h2 class="due-txt txt-font">New Applications</h2>
       <div class="policy-div">
         <div class="element">
-          <h2 class="policy-name txt-font">Policy Name</h2>
-          <h2 class="premium txt-font">Premium</h2>
-          <h2 class="premium txt-font">Apply Button</h2>
+          <h2 class="policy-name txt-font">Name</h2>
+          <h2 class="premium txt-font">Download Document</h2>
+          <h2 class="premium txt-font">Approve</h2>
         </div>
-        <% for(let policy of policies) { %>
-          <% if(!customer.policy.some(pol=>(pol.name===policy.name))) { %> 
-            <form action="/apply/<%=customer._id%>/<%=policy._id%>" method="post" class="element">
-              
-              <h2 class="policy-name txt-font"><%= policy.name  %> </h2>
-              <h2 class="premium txt-font"><%= policy.prepremium %> </h2>
-              <button  class="apply-btn txt-font">Apply</button>
-            </form>
-            
-          
-          <% } %> 
-
-          <% } %> 
-        
-        
-        
+            <form action="" class="element">
+                <h2 class="policy-name txt-font">Soyeb </h2>
+                <a class="apply-btn txt-font" href="">Download</a>
+                <button class="apply-btn txt-font" >Approve</button>
+            </form>        
       </div>
     </div>
     <!-- -------------apply policies end---------------------- -->
@@ -161,14 +131,7 @@
           <h2 class="policy-name txt-font">Reason</h2>
           <h2 class="premium txt-font">Details</h2>
         </div>
-        <% for(let qs of customer.question) {%> 
-          <div class="element">
-            <!-- <h2 class="slNo txt-font">1</h2> -->
-            <h2 class="policy-name txt-font"><%= qs.qs %> </h2>
-            <button class="apply-btn txt-font" >Details</button>
-            
-          </div>
-          <% }  %> 
+       
       </div>
     </div>
    

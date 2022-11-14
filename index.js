@@ -5,6 +5,7 @@ const Policy = require('./model/policy');
 const Customer = require('./model/customer');
 const methodOverride = require('method-override');
 const alert = require('alert'); 
+const policy = require('./model/policy');
 const app = express();
 app.use(express.static(path.join(__dirname,'public')));
 app.use(express.urlencoded({extended:false}))
@@ -48,10 +49,11 @@ app.get('/admin/:id', async(req,res)=>{
     const {id} = req.params;
     const customer = await Customer.find();
     const policies = await Policy.find();
+    console.log(customer);
     res.render('admin-dashboard',{customer, policies});
 })
 
-
+ 
 
 app.post('/customer', async (req,res)=>{
     const {id, password} = req.body;
@@ -109,10 +111,26 @@ app.patch('/customer/policy',async (req,res)=>{
     const {id} = req.body;
     let customer = await Customer.findOneAndUpdate({id, "policy.due": true}, {$set: { "policy.$.due" : false }});
 
-    customer = await Customer.findById(id);
     await customer.save()
     res.redirect(`/customer/${id}`);
 })
+
+app.patch('/admin/:adminId/:cusId/:polId',async (req,res)=>{
+    const {adminId, cusId,polId} = req.params;
+    console.log(`Pol Id is ${polId}`);
+    const policy = await Policy.findById(polId);
+    let customer = await Customer.findOneAndUpdate({cusId, "policy._id": policy._id}, {$set: { "policy.$.approved" : true }});
+    console.log(customer);
+    // customer = await Customer.findById(cusId)
+    // console.log("udfghd")
+    // console.log(customer)
+    // console.log("dffg")
+    res.redirect(`/admin/${adminId}`);
+})
+
+
+
+
 
 
 

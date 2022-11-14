@@ -59,7 +59,7 @@
         </button>
       </div>
     </div>
-    <h2 class="hello-txt">Hello <%=customer.name  %> </h2>
+    <h2 class="hello-txt">Hello <%=customer.name%> </h2>
     <button class="notification-btn">
       <img src="images/bell-icon.png" alt="" />
     </button>
@@ -73,8 +73,13 @@
       <h2 class="due-txt">Admin Dashboard</h2>
       <div class="prem-due-div">
         <div class="txt-div">
-          <h2 class="txt-font">Total Active User: 1</h2>
-          <h2 class="txt-font">Pending Application:3%> </h2>
+          <% let customerCount =0, pollices = 0%>
+          <% for(cus of customer){ %>
+            <% customerCount+=1 %> 
+            <%- pollices+=cus.policy.filter(pol=> pol.approved==false).length %> 
+            <% } %>   
+          <h2 class="txt-font">Total Active User: <%= customerCount %> </h2>
+          <h2 class="txt-font">Pending Application:<%=pollices%></h2>
           <h2 class="txt-font">Pending Policies:2</h2>
         </div>
       </div>
@@ -124,14 +129,24 @@
     <!-- -------------apply policies end---------------------- -->
     <!-- -----------------------------History START-------------------------------------- -->
     <div class="right-dashboard show-history hide">
-      <h2 class="due-txt txt-font">History</h2>
+      <h2 class="due-txt txt-font">Pending Policies</h2>
       <div class="policy-div">
         <div class="element">
-          <!-- <h2 class="slNo txt-font">Serial NO</h2> -->
-          <h2 class="policy-name txt-font">Reason</h2>
-          <h2 class="premium txt-font">Details</h2>
+          <h2 class="policy-name txt-font">Name</h2>
+          <h2 class="premium txt-font">Applied Policies</h2>
+          <h2 class="premium txt-font">Approve</h2>
         </div>
-       
+          <% for(cust of customer){ %> 
+            <% for(policy of cust.policy) {%>
+              <% if(!policy.approved){ %>  
+            <form method="post" action="/admin/<%=cust._id%>/<%=cust._id %>/<%=policy._id%>?_method=PATCH" class="element">
+                <h2 class="policy-name txt-font"><%=cust.name%></h2>
+                <h2 class="policy-name txt-font"><%=policy.name%></h2>
+                <button class="apply-btn txt-font" >Approve</button>
+            </form> 
+            <% } %>
+            <% } %>  
+            <% } %>        
       </div>
     </div>
    
@@ -141,19 +156,24 @@
 
     <!-- --------------------------Ask a Question----------------------------- -->
     <div class="right-dashboard ask-qs hide">
-      <h2 class="due-txt">Ask Your Question</h2>
-
-      <form action="/create-question" method="post">
-        <label class="reason-txt due-txt" for="reason">Customer ID</label>
-        <input  name="id" class="input-form reason-input" value="<%=customer._id%>" name="qs" id="reason" type="text" /><br />
-        <label class="due-txt ref-txt" for="refNo"
-          >Enter Your Question</label
-        >
-        <input class="input-form ref-no" name="qs" id="refNo" type="text" /><br />
-        <label class="des-txt due-txt" for="des">Enter Description</label>
-        <textarea class="input-form" id="des" cols="30" rows="10"></textarea>
-        <button class="pay-now-btn form-btn">Submit</button>
-      </form>
+      <h2 class="due-txt txt-font">Queries</h2>
+      <div class="policy-div">
+        <div class="element">
+          <h2 class="policy-name txt-font">Name</h2>
+          <h2 class="premium txt-font">Queary</h2>
+          <h2 class="premium txt-font">Solve</h2>
+        </div>
+          <% for(cust of customer){ %> 
+            <% for(question of cust.question) {%>
+              
+            <form method="post" action="/admin/<%=cust._id%>/<%=cust._id %>/<%=policy._id%>?_method=PATCH" class="element">
+                <h2 class="policy-name txt-font"><%=cust.name%></h2>
+                <h2 class="policy-name txt-font"><%=question.qs%></h2>
+                <button class="apply-btn txt-font" >Solve</button>
+            </form> 
+            <% } %>
+            <% } %>  
+      </div>
     </div>
     <!-- -----------------Ask Question End----------------------- -->
     <div class="right-dashboard logout-div hide">

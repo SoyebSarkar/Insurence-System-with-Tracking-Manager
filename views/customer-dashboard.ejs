@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Customer DashBoard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -112,11 +112,13 @@
           <h2 class="premium txt-font">Details</h2>
         </div>
         <% for(let plc of customer.policy) {%> 
+          <% if(plc.approved){ %> 
           <div class="element">
             <h2 class="policy-name txt-font"><%= plc.name %> </h2>
             <h2 class="premium txt-font"><%= plc.premium %> </h2>
             <button class="apply-btn txt-font">Details</button>
           </div>
+          <% } %> 
           <%}  %> 
 
         
@@ -138,7 +140,7 @@
             <form action="/apply/<%=customer._id%>/<%=policy._id%>" method="post" class="element">
               
               <h2 class="policy-name txt-font"><%= policy.name  %> </h2>
-              <h2 class="premium txt-font"><%= policy.prepremium %> </h2>
+              <h2 class="premium txt-font"><%= policy.premium %> </h2>
               <button  class="apply-btn txt-font">Apply</button>
             </form>
             
@@ -158,14 +160,16 @@
       <div class="policy-div">
         <div class="element">
           <!-- <h2 class="slNo txt-font">Serial NO</h2> -->
-          <h2 class="policy-name txt-font">Reason</h2>
-          <h2 class="premium txt-font">Details</h2>
+          <h2 class="policy-name-q txt-font">Reason</h2>
+          <h2 class="premium-q txt-font">Details</h2>
         </div>
         <% for(let qs of customer.question) {%> 
           <div class="element">
             <!-- <h2 class="slNo txt-font">1</h2> -->
-            <h2 class="policy-name txt-font"><%= qs.qs %> </h2>
-            <button class="apply-btn txt-font" >Details</button>
+            <h2 class="policy-name-q txt-font"><%= qs.qs %> </h2>
+
+              <button class="apply-btn txt-font" >Details</button>
+
             
           </div>
           <% }  %> 

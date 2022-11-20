@@ -388,9 +388,18 @@ justify-content: center;
 }
 .element .policy-name {
   flex: 1;
+  margin-left: 15px;
 }
 .element .premium {
   flex: 1;
+}
+.element .policy-name-q {
+  width: 60%;
+  margin-left: 15px;
+}
+.element .premium-q {
+  padding-left: 60px;
+  width: 40%;
 }
 .element .apply-btn {
   flex: 1;
@@ -399,6 +408,7 @@ justify-content: center;
   background: #00dea3;
   border-radius: 25px;
   border: none;
+  margin-right: 70px;
 }
 
 .input-form {

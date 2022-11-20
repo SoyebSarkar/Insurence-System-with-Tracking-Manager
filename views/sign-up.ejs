@@ -52,18 +52,20 @@
         src="images/img-continue-txt.png"
         alt=""
       />
-      <form action="">
+      <form action="/create/account" method="post">
         <input
           class="input-form fullname"
           type="text"
           placeholder="Full Name"
+          name="fullName"
         />
         <input
           class="input-form email"
           type="email"
           placeholder="Email"
+          name="email"
         />
-        <input class="input-form password" type="password" placeholder="Password" />
+        <input class="input-form password" type="password" name="password" placeholder="Password" />
         
         <input
           class="input-form re-password"

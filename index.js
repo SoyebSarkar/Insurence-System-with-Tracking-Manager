@@ -18,12 +18,13 @@ app.use(methodOverride('_method'))
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine', 'ejs')
 
+
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
     auth: {
       user: 'testcodefor@gmail.com',
-      pass: 'Password'
+      pass: 'ltunmoeiusbhbbzo'
     }
   });
 
@@ -44,7 +45,9 @@ mongoose
 
 
 app.get('/',(req,res)=>{
+  
     res.render('home');
+    
 })
 app.get('/sign-up',(req,res)=>{
     res.render('sign-up');
@@ -102,8 +105,8 @@ app.post('/create/account', async(req,res)=>{
       .catch(e=>{
         console.log(e);
       })
-
-    res.send("DOne");
+      const data = "Thank You for Chosing Us"
+    res.render('error',{data});
 
 })
  
@@ -124,17 +127,19 @@ app.post('/customer', async (req,res)=>{
                 res.redirect(`/customer/${id}`);
            }
            else{
-            res.send("Wait Until,  Admin Approves Your Application")
+            const data = "Wait Until,  Admin Approves Your Application";
+            res.render('error',{data})
            }
             }
              
         else{
-            alert("Wrong Password")
-            res.redirect("/sign-in")
+          const data = "Wrong Password, Plese Enter A valid Password";
+          res.render('error',{data})
         }
     }
     catch{
-        res.send("Wrong ID")
+      const data = "Wrong ID, Plese Enter A valid ID";
+      res.render('error',{data})
     }
       
 })
@@ -186,8 +191,9 @@ app.patch('/admin/:adminId/:cusId/:polId',async (req,res)=>{
     const {adminId, cusId,polId} = req.params;
     console.log(`Pol Id is ${polId}`);
     const policy = await Policy.findById(polId);
-    let customer = await Customer.findOneAndUpdate({cusId, "policy._id": policy._id}, {$set: { "policy.$.approved" : true }});
+    let customer = await Customer.findOneAndUpdate({"_id":cusId, "policy._id": policy._id}, {$set: { "policy.$.approved" : true }});
     console.log(customer);
+
 
  
     res.redirect(`/admin/${adminId}`);

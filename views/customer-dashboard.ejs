@@ -68,7 +68,7 @@
       <img src="https://img.icons8.com/doodle/48/000000/user-male-circle.png" />
     </button>
     <!-- ------------------DASHBOARD WINDOW-------------------------------------- -->
-    <% let premDue = customer.policy.filter(p => p.due==true) %>
+    <% let premDue = customer.policy.filter(p => p.due==true && p.approved==true) %>
     <% if(premDue.length===0) {%>
       <div class="right-dashboard dashbord-div">
         <h2 class="due-txt">Premium Due</h2>

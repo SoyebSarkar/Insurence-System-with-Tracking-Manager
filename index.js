@@ -32,7 +32,7 @@ transporter.verify().then(console.log).catch(console.error);
 
 
 mongoose
-  .connect('mongodb://127.0.0.1:27017/insurenceSystem')
+  .connect('mongodb://127.0.0.1:27017/MainDB')
   .then(() => {
     console.log('MongoDB connected!!')
   })
